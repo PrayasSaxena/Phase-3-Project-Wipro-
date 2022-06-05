@@ -1,0 +1,24 @@
+﻿@model WebProject.Models.Products
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">@Model.Name</h1>
+        <h5>@Model.Price RS</h5>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="~/Pic/@Model.Image" class="img-fluid" alt="@Model.Name image" />
+        </div>
+        <div class="col-lg-8">
+            <p>@Model.Details</p>
+            <a class="btn btn-lg btn-primary" href="/Home/Order/@Model.ID">Buy</a>
+        </div>
+    </div>
+</div>

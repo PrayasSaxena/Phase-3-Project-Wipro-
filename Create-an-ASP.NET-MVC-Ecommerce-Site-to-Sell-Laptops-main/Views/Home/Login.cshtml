@@ -1,0 +1,33 @@
+﻿@model WebProject.Models.Login
+
+@addTagHelper *,Microsoft.AspNetCore.MVC.TagHelpers
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<h4>Login Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-10">
+                <p> <a asp-action="ProductManagement" class="btn btn-lg btn-primary">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>

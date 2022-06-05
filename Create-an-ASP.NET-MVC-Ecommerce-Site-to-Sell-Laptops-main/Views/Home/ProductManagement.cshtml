@@ -1,0 +1,61 @@
+﻿
+@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "ProductManagement";
+}
+
+<h1>ProductManagement</h1>
+
+
+
+<div class="container">
+    <div class="row">
+
+        <h5>Hello Admin User .. You can manage product by the following function:</h5>
+
+    </div>
+</div>
+
+<p>@Html.ActionLink("Add Product", "AddProduct")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Iproduct)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
+            </td>
+        </tr>
+
+    }
+</table>

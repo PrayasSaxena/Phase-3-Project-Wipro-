@@ -1,0 +1,22 @@
+﻿@model HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+
+<h2 class="text text-center">Labtop Products List</h2>
+<div class="container marketing">
+    <div class="row">
+        @foreach (var item in Model.Iproduct)
+        {
+            <div class="col-lg-4">
+                <img class="img img-rounded" src="~/Pic/@item.Image" alt="@item.Name" width="140" />
+                <h5>@item.Name</h5>
+                <p><a class="btn btn-secondary" href="/Home/Details/@item.ID" role="button">View Details</a></p>
+            </div>
+
+        }
+    </div>
+</div>
+
